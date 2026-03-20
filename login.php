@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         
         // Check admins table
-        $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE email = ?");
+        $stmt = $conn->prepare("SELECT id, username, password FROM admins WHERE username = ?");
         $stmt->execute([$email]);
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
         
@@ -54,9 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['admin_username'] = $admin['username'];
             
             if ($remember) {
-                setcookie('admin_email', $email, time() + (30 * 24 * 60 * 60), '/');
+                setcookie('admin_username', $email, time() + (30 * 24 * 60 * 60), '/');
             } else {
-                setcookie('admin_email', '', time() - 3600, '/');
+                setcookie('admin_username', '', time() - 3600, '/');
             }
             
             header("Location: admin/index.php");
