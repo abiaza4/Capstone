@@ -4,6 +4,9 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql
 
-COPY . /var/www/html/
+COPY * /var/www/html/
+COPY .htaccess /var/www/html/.htaccess
 
 RUN chmod -R 755 /var/www/html/
+
+RUN a2enmod rewrite
