@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'capstone_tutorials';
-$username = 'root';
-$password = '';
+$host = getenv('DB_HOST') ?: 'localhost';
+$dbname = getenv('DB_NAME') ?: 'capstone_tutorials';
+$username = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASS') ?: '';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
