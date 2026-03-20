@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CAPstone Group</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">CAP<span>stone</span> <span>Group</span></a>
+            
+            <div class="search-container">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" name="q" placeholder="Search courses..." class="search-input">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Courses <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu" id="courseDropdown"></ul>
+                </li>
+                <span id="navbarContent"></span>
+            </ul>
+            
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-content">
+            <div class="container">
+                <h1><i class="fas fa-info-circle"></i> About Us</h1>
+                
+                <div class="about-content">
+                    <div class="about-hero">
+                        <div class="about-logo">
+                            <span class="logo-text">CAP<span>stone</span> <span>Group</span></span>
+                        </div>
+                        <p class="tagline">Empowering Coders Worldwide</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Our Mission</h2>
+                        <p>At CAPstone Group, we believe that quality education should be accessible to everyone, everywhere. Our mission is to provide free, high-quality programming tutorials to aspiring developers across the globe.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>What We Offer</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-video"></i>
+                                <h3>Video Tutorials</h3>
+                                <p>Curated collection of the best programming tutorials from expert creators</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-code"></i>
+                                <h3>Multiple Languages</h3>
+                                <p>Learn Python, Java, JavaScript, PHP, C++, C#, Ruby, Swift and more</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-users"></i>
+                                <h3>Community</h3>
+                                <p>Join thousands of learners and share your programming journey</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3>Free Access</h3>
+                                <p>All courses and content are freely available to everyone</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Why Choose Us?</h2>
+                        <div class="why-choose-grid">
+                            <div class="choose-item">
+                                <span class="number">8+</span>
+                                <span class="label">Programming Languages</span>
+                            </div>
+                            <div class="choose-item">
+                                <span class="number">48+</span>
+                                <span class="label">Video Tutorials</span>
+                            </div>
+                            <div class="choose-item">
+                                <span class="number">100K+</span>
+                                <span class="label">Students Worldwide</span>
+                            </div>
+                            <div class="choose-item">
+                                <span class="number">1M+</span>
+                                <span class="label">Total Views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Our Story</h2>
+                        <p>CAPstone Group started with a simple idea: make programming education accessible to everyone. What began as a small collection of tutorial links has grown into a comprehensive learning platform used by thousands of aspiring developers worldwide.</p>
+                        <p>We continuously curate the best programming tutorials from trusted sources, ensuring our learners get access to the most up-to-date and high-quality educational content.</p>
+                    </div>
+                    
+                    <div class="about-section cta-section">
+                        <h2>Start Learning Today</h2>
+                        <p>Ready to begin your programming journey? Explore our courses and start learning for free!</p>
+                        <div class="cta-buttons">
+                            <a href="index.html" class="btn">Browse Courses</a>
+                            <a href="register.html" class="btn btn-outline">Create Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">CAP<span>stone</span> <span>Group</span></a>
+                    <p>Empowering coders worldwide with free, high-quality programming tutorials.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="search.html"><i class="fas fa-search"></i> Search</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Courses</h3>
+                    <ul id="footerCourses"></ul>
+                </div>
+                
+                <div class="footer-links" id="footerAccount"></div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 CAPstone Group. All rights reserved. Made with <i class="fas fa-heart"></i> for learners worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseDropdown = document.getElementById('courseDropdown');
+            const footerCourses = document.getElementById('footerCourses');
+            
+            courses.forEach(c => {
+                courseDropdown.innerHTML += `
+                    <li><a href="course.html?id=${c.id}">${c.name}</a></li>
+                `;
+                if (c.id <= 4) {
+                    footerCourses.innerHTML += `
+                        <li><a href="course.html?id=${c.id}"><i class="fab fa-${c.name.toLowerCase()}"></i> ${c.name}</a></li>
+                    `;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
