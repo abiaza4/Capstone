@@ -85,7 +85,7 @@ $total_users = $stmt->fetch()['total'];
                 <h2><i class="fas fa-fire"></i> Recommended for You</h2>
                 <div class="courses-grid">
                     <?php 
-                    $stmt = $conn->query("SELECT * FROM courses ORDER BY RAND() LIMIT 3");
+                    $stmt = $conn->query("SELECT * FROM courses ORDER BY RANDOM() LIMIT 3");
                     $recommended = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($recommended as $course): ?>
                         <a href="course.php?id=<?php echo $course['id']; ?>" class="course-card">

@@ -6,8 +6,9 @@ $dbname = getenv('DB_NAME') ?: 'capstone_tutorials';
 $username = getenv('DB_USER') ?: 'root';
 $password = getenv('DB_PASS') ?: '';
 
+$dsn = "pgsql:host=$host;dbname=$dbname";
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die("Connection failed: " . $e->getMessage());
