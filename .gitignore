@@ -1,0 +1,42 @@
+# Sensitive data - NEVER commit
+*_cookie*.txt
+*_session*.txt
+session.txt
+cookies.txt
+admin_cookie.txt
+admin_cookies.txt
+admin_session.txt
+member_cookies.txt
+member_session.txt
+
+# Environment files
+.env
+.env.*
+config.php
+
+# Logs
+*.log
+error_log
+logs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+*.swp
+*.swo
+*~
+
+# Uploads (user content)
+uploads/*
+!uploads/.gitkeep
+
+# Dependencies (if any)
+/node_modules/
+/vendor/
