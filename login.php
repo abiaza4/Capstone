@@ -49,18 +49,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute([$email]);
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        if ($admin && password_verify($password, $admin['password'])) {
-            $_SESSION['admin_id'] = $admin['id'];
-            $_SESSION['admin_username'] = $admin['username'];
-            
-            if ($remember) {
-                setcookie('admin_username', $email, time() + (30 * 24 * 60 * 60), '/');
-            } else {
-                setcookie('admin_username', '', time() - 3600, '/');
+        if ($admin) {
+            $passwordMatch = password_verify($password, $admin['password']) || $admin['password'] === $password;
+            if ($passwordMatch) {
+                // Rehash password if it's plain text
+                if ($admin['password'] === $password) {
+                    $updateStmt = $conn->prepare("UPDATE admins SET password = ? WHERE id = ?");
+                    $updateStmt->execute([password_hash($password, PASSWORD_DEFAULT), $admin['id']]);
+                }
+                $_SESSION['admin_id'] = $admin['id'];
+                $_SESSION['admin_username'] = $admin['username'];
+                
+                if ($remember) {
+                    setcookie('admin_username', $email, time() + (30 * 24 * 60 * 60), '/');
+                } else {
+                    setcookie('admin_username', '', time() - 3600, '/');
+                }
+                
+                header("Location: admin/index.php");
+                exit;
             }
-            
-            header("Location: admin/index.php");
-            exit;
         }
         
         // No match found
