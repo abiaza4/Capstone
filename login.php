@@ -44,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
         
-        // Check admins table
-        $stmt = $conn->prepare("SELECT id, username, password FROM admins WHERE username = ?");
-        $stmt->execute([$email]);
+        // Check admins table (by email or username)
+        $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE email = ? OR username = ?");
+        $stmt->execute([$email, $email]);
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($admin) {
